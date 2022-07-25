@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Register | Node Auth </title>
+    <style>
+
+    </style>
+</head>
+
+<body style="text-align: center ; margin-top: 4rem ;">
+    <div class="login-form">
+        <h3> Register page </h3>  
+        <form action="register.ejs" method="post">
+            <div class="input-group" style="padding-top: 2rem ;">
+                <label for="username"> Username </label>
+                <input type="text" name="username" />
+            </div>
+            <div class="input-group" style="padding-top: 2rem;">
+                <label for="email"> Email </label>
+                <input type="email" name="email" />
+            </div>
+            <div class="input-group" style="padding-top: 2rem ;">
+                <label for="password"> password </label>
+                <input type="password" name="password" />
+            </div>
+             <button style="margin-top: 1rem ;"> Login </button>   
+        </form>
+        <a href="login.ejs" > Register </a>
+    </div>
+</body>
+</html>
