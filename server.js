@@ -5,11 +5,17 @@ const MongoDBSession = require("connect-mongodb-session")(session);
 const mongoose = require("mongoose"); 
 const app = express();
 const UserModel = require("./models/User")
-const mongoURI = 'mongodb://localhost:27017/session';
+const mongoURI = 'mongodb://127.0.0.1:27017/db?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0/session';
 
 mongoose
-    .connect(mongoURI , { useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology: true,})
-    .then((res) => { console.log("MongoDB connected")});
+    .connect(mongoURI , {
+         useNewUrlParser:true, 
+         useCreateIndex: true, 
+         useUnifiedTopology: true,
+    })
+    .then((res) => { 
+        console.log("MongoDB connected")
+    });
 
 const store = new MongoDBSession({ url: mongoURI , collection: "my session",})
 
@@ -57,7 +63,7 @@ app.get("/register" , (req , res ) => {
 });
 
 app.post("/register" , async (req , res ) => {
-    const { username , email , password } = reg.body
+    const { username , email , password } = req.body
 
     let user = await UserModel.findOne({email}) ;
 
@@ -74,7 +80,7 @@ app.post("/register" , async (req , res ) => {
 
     await user.save();
 
-    res.redirect('/login')
+    res.redirect("/login")
 });
 
 app.get("/dashboard" , isAuth , (req , res ) => {

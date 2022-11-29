@@ -6,9 +6,9 @@
     <title>Login  |  Node Auth </title>
 </head>
 <body>
-    <div>
+    <div class="login-form">
         <h3>Login Page </h3>
-        <form action="./login.ejs" method="post">
+        <form action="/login" method="post">
             <div class="input-group">
                 <label for="email">Email : </label>
                 <input type="email" name="email"/>
@@ -17,9 +17,9 @@
                 <label for="password" > password </label>
                 <input type="password" name="password"/>
             </div>
-            <button >Login </button>
+            <button >Login</button>
         </form>
-        <a href="./register.ejs"> Register </a>
+        <a href="/register"> Register </a>
     </div>
 </body>
 </html>

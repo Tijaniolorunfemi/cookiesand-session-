@@ -12,7 +12,7 @@
 <body style="text-align: center ; margin-top: 4rem ;">
     <div class="login-form">
         <h3> Register page </h3>  
-        <form action="register.ejs" method="post">
+        <form action="/register" method="post">
             <div class="input-group" style="padding-top: 2rem ;">
                 <label for="username"> Username </label>
                 <input type="text" name="username" />
@@ -25,9 +25,9 @@
                 <label for="password"> password </label>
                 <input type="password" name="password" />
             </div>
-             <button style="margin-top: 1rem ;"> Register </button>   
+             <button style="margin-top:1rem"> Register </button>   
         </form>
-        <a href="login.ejs" > Login </a>
+        <a href="/login" > Login </a>
     </div>
 </body>
 </html>
